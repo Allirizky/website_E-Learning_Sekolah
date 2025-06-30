@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E Learning Sekolah</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .menu-transition {
+      transition: all 0.3s ease-in-out;
+      transform-origin: top;
+    }
+  </style>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      btn.addEventListener("click", () => {
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          menu.classList.add("scale-y-100", "opacity-100");
+          menu.classList.remove("scale-y-0", "opacity-0");
+        } else {
+          menu.classList.add("scale-y-0", "opacity-0");
+          setTimeout(() => menu.classList.add("hidden"), 300);
+        }
+      });
+
+      const navLinks = document.querySelectorAll('[data-target]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const target = link.getAttribute('data-target');
+          document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
+          document.getElementById(target).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="bg-yellow-100 text-yellow-800 px-4 py-2 text-sm text-center">
+  📢 Info Hari Ini: Ujian Akhir Semester dimulai 30 Juni 2025. Siapkan dirimu!
+</div>
+  <nav class="bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">E-Learning</h1>
+      <button id="menu-btn" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <ul class="hidden md:flex gap-4">
+        <li><a href="#" class="hover:underline" data-target="home">Beranda</a></li>
+        <li><a href="#" class="hover:underline" data-target="pelajaran">Mata Pelajaran</a></li>
+        <li><a href="#" class="hover:underline" data-target="tugas">Tugas</a></li>
+        <li><a href="#" class="hover:underline" data-target="forum">Forum Diskusi</a></li>
+        <li><a href="#" class="hover:underline" data-target="kontak">Kontak</a></li>
+        <li><a href="#" class="hover:underline">Logout</a></li>
+      </ul>
+    </div>
+    <div class="md:hidden px-4 pb-4">
+      <ul id="menu" class="hidden flex-col gap-2 bg-blue-500 text-white rounded p-4 menu-transition transform scale-y-0 opacity-0">
+        <li><a href="#" class="block py-1" data-target="home">Beranda</a></li>
+        <li><a href="#" class="block py-1" data-target="pelajaran">Mata Pelajaran</a></li>
+        <li><a href="#" class="block py-1" data-target="tugas">Tugas</a></li>
+        <li><a href="#" class="hover:underline" data-target="forum">Forum</a></li>
+        <li><a href="#" class="block py-1" data-target="kontak">Kontak</a></li>
+        <li><a href="#" class="block py-1">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Halaman Beranda -->
+  <section id="home" class="page-section">
+    <section class="relative bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+      <div class="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 text-white">
+        <h1 class="text-4xl font-bold mb-4">Selamat Datang di <br>Platform Pembelajaran Online</h1>
+        <p class="text-lg max-w-xl">Akses materi belajar, kerjakan tugas, dan berinteraksi dengan guru secara online.</p>
+      </div>
+    </section>
+    <section class="max-w-7xl mx-auto py-10 px-4">
+      <h2 class="text-2xl font-semibold mb-6">Materi Terbaru</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">Matematika - Persamaan Kuadrat</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 29 Juni 2025</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">Bahasa Indonesia</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 29 Juli 2025</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">IPA - Sistem Pernapasan</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 30 Juni 2025</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">IPS - Geografi</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 30 Juni 2025</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">PJOK - Sepak Bola</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 30 Juni 2025</p>
+        </div>
+        <div class="bg-white p-4 shadow rounded transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-md">
+          <h3 class="font-bold">Bahasa Jepang - Katakana</h3>
+          <p class="text-sm text-gray-500">Diperbarui, 30 Juni 2025</p>
+        </div>
+      </div>
+    </section>
+
+<section class="max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Prestasi Siswa</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+      <h3 class="text-lg font-bold text-blue-600 mb-2">Juara Olimpiade Matematika</h3>
+      <p class="text-gray-600">Siswa kami berhasil meraih medali emas tingkat nasional.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+      <h3 class="text-lg font-bold text-green-600 mb-2">Lomba Debat Bahasa Indonesia</h3>
+      <p class="text-gray-600">Tim debat menjuarai kompetisi antar sekolah se-provinsi.</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+      <h3 class="text-lg font-bold text-purple-600 mb-2">Inovasi Sains & Prakarya</h3>
+      <p class="text-gray-600">Karya siswa dipamerkan di Festival Inovasi Siswa Nasional.</p>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Forum Diskusi Populer</h2>
+  <div class="bg-white p-6 rounded shadow">
+    <ul class="space-y-4">
+      <li class="border-b pb-4">
+        <h4 class="font-semibold text-blue-700">[Matematika] Cara mudah memahami akar kuadrat?</h4>
+        <p class="text-sm text-gray-600">Diunggah oleh <strong>Alli</strong> • 12 komentar</p>
+      </li>
+      <li class="border-b pb-4">
+        <h4 class="font-semibold text-green-700">[IPA] Kenapa kita cegukan setelah makan cepat?</h4>
+        <p class="text-sm text-gray-600">Diunggah oleh <strong>Intan</strong> • 9 komentar</p>
+      </li>
+      <li class="border-b pb-4">
+        <h4 class="font-semibold text-purple-700">[Bahasa Indonesia] Apa itu majas personifikasi?</h4>
+        <p class="text-sm text-gray-600">Diunggah oleh <strong>Rizky</strong> • 15 komentar</p>
+      </li>
+      <li class="border-b pb-4">
+        <h4 class="font-semibold text-red-700">[Bahasa Jepang] Apa itu Gojuon?</h4>
+        <p class="text-sm text-gray-600">Diunggah oleh <strong>Nauval</strong> • 10 komentar</p>
+      </li>
+    </ul>
+    <div class="mt-6 text-center">
+      <a href="#" class="text-blue-600 hover:underline font-semibold">Lihat Semua Diskusi</a>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto py-10 px-4">
+      <h2 class="text-2xl font-semibold mb-6">Tujuan E-Learning</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 shadow rounded text-center hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Materi Interaktif</h3>
+          <p class="text-gray-600">Video, kuis, dan latihan langsung diakses dari rumah.</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded text-center hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Akses 24/7</h3>
+          <p class="text-gray-600">Belajar kapan saja tanpa batas waktu.</p>
+        </div>
+        <div class="bg-white p-6 shadow rounded text-center hover:shadow-lg transition">
+          <h3 class="text-lg font-bold mb-2">Laporan Kemajuan</h3>
+          <p class="text-gray-600">Pantau progres belajar siswa secara berkala.</p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+<!-- Halaman Pelajaran -->
+<section id="pelajaran" class="hidden page-section max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Dashboard Mata Pelajaran</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🧮</span>
+      <p>Matematika</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">📘</span>
+      <p>Bahasa Indonesia</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🧪</span>
+      <p>IPA</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🌍</span>
+      <p>IPS</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🏠</span>
+      <p>PPKN</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🎼</span>
+      <p>Seni Budaya</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🛠️</span>
+      <p>Prakarya</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🗽</span>
+      <p>Bahasa Inggris</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🎎</span>
+      <p>Bahasa Jepang</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">👨🏻‍💻</span>
+      <p>Teknik Informatika Komputer</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">⛹🏻</span>
+      <p>PJOK</p>
+    </div>
+    <div class="flex flex-col items-center bg-white p-4 shadow rounded transform transition hover:scale-105">
+      <span class="text-3xl">🗿</span>
+      <p>Sejarah</p>
+    </div>
+  </div>
+
+  <section class="max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Statistik Belajar</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <div class="bg-white p-6 rounded shadow">
+      <h3 class="text-3xl font-bold text-blue-600">30</h3>
+      <p class="text-gray-600">Materi Telah Diakses</p>
+    </div>
+    <div class="bg-white p-6 rounded shadow">
+      <h3 class="text-3xl font-bold text-green-600">95%</h3>
+      <p class="text-gray-600">Tugas Terkumpul</p>
+    </div>
+  </div>
+</section>
+
+
+  <div class="mt-10 bg-blue-50 p-6 rounded shadow">
+    <h3 class="text-xl font-semibold mb-2">Tips Belajar Efektif</h3>
+    <ul class="list-disc ml-6 text-gray-700">
+      <li>Luangkan waktu belajar setiap hari secara konsisten</li>
+      <li>Gunakan catatan visual atau mind map untuk memahami materi</li>
+      <li>Diskusikan materi bersama teman atau guru</li>
+    </ul>
+  </div>
+
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold mb-4">Motivasi Belajar</h3>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe class="w-full h-96 rounded shadow" src="https://youtube.com/embed/f8NrrAqsvTg?si=A2xe9RulYmaUUsQz" title="Belajar Efektif" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Halaman Tugas -->
+<section id="tugas" class="hidden page-section max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Tugas Aktif</h2>
+  <ul class="space-y-4">
+    <li class="bg-white p-4 rounded shadow transform transition hover:scale-105 hover:shadow-md">
+      <strong>Matematika</strong> Kuis Bab 3 - Batas waktu 30 Juni 2025
+    </li>
+    <li class="bg-white p-4 rounded shadow transform transition hover:scale-105 hover:shadow-md">
+      <strong>IPA</strong> Laporan Praktikum Sistem Pencernaan - 26 Juni 2025
+    </li>
+    <li class="bg-white p-4 rounded shadow transform transition hover:scale-105 hover:shadow-md">
+      <strong>Bahasa Indonesia</strong> Membuat Puisi - 29 Juni 2025
+    </li>
+    <li class="bg-white p-4 rounded shadow transform transition hover:scale-105 hover:shadow-md">
+      <strong>Prakarya</strong> Membuat Vidio Kerajinan Dari Barang Tidak Terpakai - 30 Juni 2025
+    </li>
+    <li class="bg-white p-4 rounded shadow transform transition hover:scale-105 hover:shadow-md">
+      <strong>Bahasa Inggris</strong> Membuat Kalimat Percakapan - 30 Juni 2025
+    </li>
+  </ul>
+
+  <div class="mt-10 bg-green-50 p-6 rounded shadow">
+    <h3 class="text-xl font-semibold mb-2">Panduan Mengerjakan Tugas</h3>
+    <ol class="list-decimal ml-6 text-gray-700 space-y-1">
+      <li>Baca instruksi dengan teliti</li>
+      <li>Kerjakan tugas di tempat yang tenang</li>
+      <li>Unggah file sebelum tenggat waktu</li>
+      <li>Hubungi guru jika mengalami kesulitan</li>
+    </ol>
+  </div>
+
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold mb-4">Contoh Upload Tugas</h3>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe class="w-full h-96 rounded shadow" src="https://youtube.com/embed/MxEyVaU-djI?si=rbZ3XmgonQ62uxMD" title="Cara Upload Tugas" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Halaman Kontak -->
+<section id="kontak" class="hidden page-section max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-2xl font-semibold mb-6">Kontak Kami</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white p-6 rounded shadow">
+      <h3 class="text-lg font-bold mb-2 text-blue-700">Informasi Sekolah</h3>
+  <div class="bg-white p-6 rounded shadow col-span-2">
+    <h3 class="text-lg font-bold mb-2 text-red-600">Lokasi Sekolah</h3>
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe
+        class="w-full h-96 rounded"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.011830785188!2d106.73867807406645!3d-6.262304761251522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f151c122b5b1%3A0x79b89479e01c73b4!2sJl.%20Otista%20Raya%20Gg.%20Mandor%2C%20Tangerang%20Selatan!5e0!3m2!1sid!2sid!4v1719742812345"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+  </div>
+</div>
+      <p class="text-gray-700 mb-2"><strong>Alamat:</strong> Jl. Otista Raya, Gg Mandor, Tangerang Selatan</p>
+      <p class="text-gray-700 mb-2"><strong>Email:</strong> allirizky769@gmail.com</p>
+      <p class="text-gray-700 mb-2"><strong>Telepon:</strong> +62-82113374454</p>
+      <p class="text-gray-700"><strong>Jam Operasional:</strong> Senin - Jumat, 08.00 - 15.00</p>
+    </div>
+
+    <!-- Formulir Kontak -->
+    <div class="bg-white p-6 rounded shadow">
+      <h3 class="text-lg font-bold mb-2 text-green-700">Kirim Pesan</h3>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-1" for="nama">Nama</label>
+          <input type="text" id="nama" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="Nama lengkap" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-1" for="email">Email</label>
+          <input type="email" id="email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="Email aktif" />
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-1" for="pesan">Pesan</label>
+          <textarea id="pesan" rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="Tulis pesan anda di sini..."></textarea>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Kirim</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Halaman Forum Diskusi -->
+<section id="forum" class="hidden page-section max-w-7xl mx-auto py-10 px-4">
+  <h2 class="text-3xl font-bold mb-6">Forum Diskusi</h2>
+
+  <div class="bg-white p-6 rounded shadow mb-10">
+    <h3 class="text-xl font-semibold mb-4">Ajukan Pertanyaan Baru</h3>
+    <form>
+      <div class="mb-4">
+        <label class="block mb-1 text-gray-700">Judul Pertanyaan</label>
+        <input type="text" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring" placeholder="Contoh: Bagaimana cara menghitung kecepatan?" />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1 text-gray-700">Topik</label>
+        <select class="w-full px-4 py-2 border rounded focus:outline-none focus:ring">
+          <option>Matematika</option>
+          <option>IPA</option>
+          <option>Bahasa Indonesia</option>
+          <option>IPS</option>
+          <option>Bahasa Inggris</option>
+          <option>Bahasa Jepang</option>
+          <option>PPKN</option>
+          <option>Teknik Informatika Komputer</option>
+          <option>Seni Budaya</option>
+          <option>Prakarya</option>
+          <option>PJOK</option>
+          <option>Sejarah</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1 text-gray-700">Isi Pertanyaan</label>
+        <textarea rows="4" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring" placeholder="Tuliskan pertanyaan lengkap Anda di sini..."></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kirim Pertanyaan</button>
+    </form>
+  </div>
+
+  <!-- Pencarian -->
+  <div class="mb-6">
+    <input type="text" placeholder="Cari diskusi..." class="w-full px-4 py-2 border rounded shadow focus:outline-none focus:ring focus:ring-blue-300">
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const hour = new Date().getHours();
+    const darkMode = hour >= 18 || hour < 6;
+
+    if (darkMode) {
+      document.body.classList.add("bg-gray-900", "text-white");
+
+      document.querySelectorAll(".bg-white").forEach(el => {
+        el.classList.replace("bg-white", "bg-gray-800");
+      });
+
+      document.querySelectorAll(".text-gray-600").forEach(el => {
+        el.classList.replace("text-gray-600", "text-gray-300");
+      });
+
+      document.querySelectorAll(".text-gray-700").forEach(el => {
+        el.classList.replace("text-gray-700", "text-gray-200");
+      });
+
+      document.querySelectorAll(".text-gray-800").forEach(el => {
+        el.classList.replace("text-gray-800", "text-gray-100");
+      });
+
+      document.querySelectorAll(".bg-blue-50").forEach(el => {
+        el.classList.replace("bg-blue-50", "bg-gray-700");
+      });
+
+      document.querySelectorAll(".bg-green-50").forEach(el => {
+        el.classList.replace("bg-green-50", "bg-gray-700");
+      });
+    }
+  });
+</script>
+
+</section> 
+  <footer class="bg-blue-700 text-white text-center py-6 mt-10">
+  <p>&copy; 2025 E-Learning Sekolah | Developed by Muhammad Alli Rizky</p>
+   <p>&copy; Copyright by Muhammad Alli Rizky</p>
+    <div class="mt-4 flex justify-center space-x-4">
+    <a href="https://wa.me/6287886856048" target="_blank" aria-label="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 hover:opacity-75">
+    </a>
+    <a href="https://www.tiktok.com/@allirzk" target="_blank" aria-label="TikTok">
+    <img src="https://img.icons8.com/color/48/000000/tiktok--v1.png" alt="TikTok" class="w-6 h-6 hover:opacity-75">
+    </a>
+    <a href="https://instagram.com/allirzky_" target="_blank" aria-label="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="w-6 h-6 hover:opacity-75">
+    </a>
+    </div>
+  </footer>
+</body>
+</html>
